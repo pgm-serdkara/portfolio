@@ -1,0 +1,348 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+/* Global element styles */
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-base);
+  background-color: var(--color-background);
+  color: var(--color-text);
+  margin: 0;
+  line-height: 1.6;
+  transition: background var(--transition-duration),
+    color var(--transition-duration);
+}
+
+/* Skip link styling */
+.skip-link {
+  position: absolute;
+  top: -2rem;
+  left: 0;
+  background: var(--color-primary);
+  color: var(--color-background);
+  padding: 0.5rem 1rem;
+  z-index: 100;
+  transition: top var(--transition-duration);
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Header and Navigation */
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem;
+  background-color: var(--color-background);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+.nav__list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__list > .nav__item {
+  margin: 0 0.5rem;
+}
+
+.nav__list > .nav__item .nav__link {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 1rem;
+  transition: color var(--transition-duration);
+}
+
+.nav__list > .nav__item .nav__link:hover,
+.nav__list > .nav__item .nav__link:focus {
+  color: var(--color-accent);
+}
+
+/* Main content */
+main {
+  padding: 1rem;
+  container-type: inline-size; /* Enable container queries */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  margin-bottom: 2rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  max-width: 40rem;
+  width: 100%;
+}
+
+.contact__input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-secondary);
+  border-radius: 2rem;
+}
+
+.contact__textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--color-secondary);
+  border-radius: 2rem;
+}
+
+/* Buttons */
+.btn {
+  background: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  color: var(--color-background);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: background var(--transition-duration),
+    color var(--transition-duration);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.btn--secondary,
+.btn--secondary a {
+  background: transparent;
+  color: var(--color-primary);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-decoration: none;
+}
+
+.btn:hover,
+.btn:focus {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.btn__link {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  padding: 2rem;
+  background-color: var(--color-background);
+}
+
+.hero__text {
+  margin-left: 3rem;
+  margin-right: 2rem;
+}
+
+.hero__sub-heading {
+  color: hsl(0, 100%, 42%);
+}
+
+.hero__img {
+  height: 20rem;
+  display: block;
+  border-radius: 50%;
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    black 60%,
+    transparent 100%
+  );
+  mask-image: radial-gradient(
+    circle at center,
+    hsl(0, 0%, 0%) 60%,
+    transparent 100%
+  );
+}
+
+.hero__desc {
+  margin: 2rem 0;
+}
+
+/* Services */
+.services__container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.services__item {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-template-rows: auto; /* Fallback for browsers that don't support subgrid */
+}
+
+/* Footer */
+footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: var(--color-background);
+  border-top: 1px solid var(--color-secondary);
+  width: 100%;
+}
+
+.footer__social {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+html[data-theme="dark"] .footer__icon {
+  filter: invert(1);
+}
+
+.footer__copy {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+/* Dialog styling */
+dialog {
+  border: none;
+  padding: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  overflow: hidden;
+  animation: enlarge 0.5s ease forwards;
+  margin: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.project-dialog-img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Popover styling */
+.popover {
+  display: none;
+  background: var(--color-background);
+  color: var(--color-text);
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-secondary);
+  border-radius: 2rem;
+  box-shadow: 0 0 0.5rem hsla(0, 0%, 0%, 0.3);
+  position: absolute;
+  z-index: 1000;
+}
+
+/* Reveal the popover on hover of the container */
+.popover-container:hover .popover {
+  display: block;
+  top: 100%;
+}
+
+/* View transitions for navigation */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old {
+  animation: slideOut 500ms ease-in-out forwards;
+}
+
+::view-transition-new {
+  animation: slideIn 500ms ease-in-out forwards;
+}
+
+/* Keyframe animations */
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes enlarge {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(1rem);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes card-expand {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.05);
+  }
+}
+
+.projects__item:hover {
+  animation: card-expand 0.5s ease forwards;
+  cursor: pointer;
+}

@@ -1,0 +1,37 @@
+.projects {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  margin-top: 2rem;
+}
+
+@container (min-width: 30rem) {
+  .projects {
+    grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
+    gap: 2rem;
+  }
+}
+
+.projects__item {
+  display: grid;
+  /* subgrid with fallback for browsers that don't support it */
+  grid-template-rows: subgrid;
+  grid-template-rows: auto;
+}
+
+.projects__details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.projects__img {
+  width: 100%;
+  display: block;
+  -webkit-mask-image: linear-gradient(
+    to top,
+    transparent 5%,
+    hsl(0, 0%, 0%) 95%
+  );
+  mask-image: linear-gradient(to top, transparent 5%, hsl(0, 0%, 0%) 95%);
+}

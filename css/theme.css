@@ -1,0 +1,41 @@
+/* Root CSS variables for light mode; dark mode is applied via a data attribute */
+:root {
+  --color-background: hsl(0, 0%, 100%);
+  --color-text: hsl(0, 0%, 0%);
+  --color-primary: hsl(0, 0%, 0%);
+  --color-secondary: hsl(0, 0%, 20%);
+  --color-accent: hsl(0, 0%, 33%);
+  --font-base: "Inter", sans-serif;
+  --transition-duration: 0.3s;
+  --view-transition-duration: 0.5s;
+}
+
+/* Dark mode overrides via data-theme attribute */
+:root[data-theme="dark"] {
+  --color-background: hsl(0, 0%, 0%);
+  --color-text: #ffffff;
+  --color-primary: #ffffff;
+  --color-secondary: #cccccc;
+  --color-accent: #aaaaaa;
+}
+
+/* Style for the toggle button */
+#theme-toggle {
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+
+html[data-theme="light"] #theme-toggle {
+  background-image: url("assets/icons/moon.svg");
+}
+
+html[data-theme="dark"] #theme-toggle {
+  background-image: url("assets/icons/sun.svg");
+}
+
+html[data-theme="dark"] #theme-toggle img {
+  filter: invert(1);
+}

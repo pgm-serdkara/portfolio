@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Serdar Karaman | Portfolio</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+</head>
+
+
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header role="banner">
+        <nav role="navigation" aria-label="Main Navigation">
+            <ul class="nav__list">
+                <li class="nav__item"><a class="nav__link" href="index.html">Home</a></li>
+                <li class="nav__item"><a class="nav__link" href="about.html">About</a></li>
+                <li class="nav__item"><a class="nav__link" href="projects.html">Projects</a></li>
+                <li class="nav__item"><a class="nav__link" href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+
+        <button id="theme-toggle" class="btn btn--theme" aria-label="Toggle dark mode">
+            <img id="theme-icon" src="assets/icons/moon.svg" alt="" aria-hidden="true" />
+        </button>
+    </header>
+
+    <main id="main-content" role="main">
+        <h1>Contact</h1>
+
+        <form class="contact__form" action="https://formspree.io/f/xjvjlqgk" method="POST" novalidate>
+            <label class="contact__label">Name
+                <input class="contact__input" type="text" name="name" required />
+            </label>
+
+            <label class="contact__label">Email
+                <input class="contact__input" type="email" id="email" name="email" required />
+            </label>
+
+            <label class="contact__label">Message
+                <textarea class="contact__textarea" name="message" required></textarea>
+            </label>
+
+            <div class="popover-container">
+                <button type="submit" class="btn btn--primary" aria-describedby="popover">
+                    Send
+                </button>
+                <div id="popover" class="popover" role="tooltip" hidden>
+                    <p>Please review your information before sending.</p>
+                </div>
+            </div>
+        </form>
+
+        <section class="contact__info">
+            <h2>Contact info</h2>
+
+            <p>Phone: 0456190805
+                <br>
+                email: serdar.karaman@outlook.be
+            </p>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer__social">
+            <a href="https://www.linkedin.com/in/serdar-karaman-2aa1b632b/" target="_blank" rel="noreferrer noopener">
+                <img class="footer__icon" src="assets/icons/linkedin.svg" alt="LinkedIn icon" />
+            </a>
+
+            <a href="https://github.com/pgm-serdkara" target="_blank" rel="noreferrer noopener">
+                <img class="footer__icon" src="assets/icons/github.svg" alt="Github icon" />
+            </a>
+
+            <a href="https://x.com/CHIEFMEMEOFFICE" target="_blank" rel="noreferrer noopener">
+                <img class="footer__icon" src="assets/icons/x.svg" alt="X icon" />
+            </a>
+        </div>
+
+        <div class="footer__copy">
+            <p>&copy; 2025 Serdar Karaman. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+
+</html>
