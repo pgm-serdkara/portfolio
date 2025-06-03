@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
 
 /* Global element styles */
 body {
@@ -78,7 +78,7 @@ main {
   margin-bottom: 2rem;
 }
 
-h1 {
+.h1 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
 }
@@ -86,6 +86,30 @@ h1 {
 h2 {
   font-size: 1.5rem;
   margin-bottom: 1rem;
+}
+
+.future-work {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  padding: 2rem;
+}
+
+.services .services__container {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+.services__item {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-template-rows: auto; /* Fallback for browsers that don't support subgrid */
+}
+
+.technologies {
+  margin-top: 5rem;
 }
 
 .contact__form {
@@ -109,6 +133,10 @@ h2 {
   padding: 0.5rem;
   border: 1px solid var(--color-secondary);
   border-radius: 2rem;
+}
+
+.contact__info {
+  margin-top: 5rem;
 }
 
 /* Buttons */
@@ -182,19 +210,6 @@ h2 {
 
 .hero__desc {
   margin: 2rem 0;
-}
-
-/* Services */
-.services__container {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-}
-
-.services__item {
-  display: grid;
-  grid-template-rows: subgrid;
-  grid-template-rows: auto; /* Fallback for browsers that don't support subgrid */
 }
 
 /* Footer */

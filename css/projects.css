@@ -1,14 +1,30 @@
 .projects {
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   margin-top: 2rem;
+}
+
+/* Grid layout voor homepage */
+.projects--grid {
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+}
+
+/* Vertical layout voor projects pagina */
+.projects--list {
+  grid-template-columns: 1fr;
 }
 
 @container (min-width: 30rem) {
   .projects {
-    grid-template-columns: repeat(auto-fit, minmax(3, 1fr));
     gap: 2rem;
+  }
+
+  .projects--grid {
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  }
+
+  .projects--list {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -34,4 +50,33 @@
     hsl(0, 0%, 0%) 95%
   );
   mask-image: linear-gradient(to top, transparent 5%, hsl(0, 0%, 0%) 95%);
+}
+
+.projects--list .projects__img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto; /* Dit centreert de afbeelding */
+}
+
+.projects__description {
+  padding: 1rem 0;
+}
+
+.projects__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.projects__link:hover {
+  text-decoration: underline;
+}
+
+.projects__link-icon {
+  width: 1.2rem;
+  height: 1.2rem;
 }
